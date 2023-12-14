@@ -7,7 +7,7 @@ N = size(y,1);
 noisy_nums=zeros(N,1);
 Num = length(find(y==1));
 TotalNum = floor(noisy_ratio*Num);
-cnt = 0;%ÅĞ¶ÏÊÇ·ñ¼ÓÂú
+cnt = 0;
 while TotalNum>0&&cnt<N
     cnt = 0;
     for i=1:N
