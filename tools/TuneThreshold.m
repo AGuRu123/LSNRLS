@@ -2,7 +2,7 @@ function [ tau,  currentResult] = TuneThreshold( output, target, bAllOne, metric
 % Tune the threshold for multi-label learning algorithms on the training
 % data with one evaluation metric
     if nargin < 4
-         metricIndex = 3; % InstanceF1  5:MacroF1
+         metricIndex = 3;
     end
     if nargin < 3
           bAllOne = 0;
@@ -47,10 +47,8 @@ function [ tau,  currentResult] = TuneThreshold( output, target, bAllOne, metric
     end
 end
 
-
-
 function f1 = evaluateF1(target, predict)
-% label-based f1 bor each label
+% label-based f1 for each label
     TP = target*predict';
     precision = TP/sum(predict~=0);
     recall = TP/sum(target~=0);
@@ -58,9 +56,6 @@ function f1 = evaluateF1(target, predict)
 end
 
 function  Result = evaluateOneMetric(target, predict_target, metric)
-% predict_target
-% target
-%   
     Result = 0;
     if metric == 1
         HammingScore = 1 - Hamming_loss(predict_target,target);
