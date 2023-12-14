@@ -1,8 +1,7 @@
 function [x,xt,y_p,y,yt]=sampletool(X,Y,modelparameter)
 % Y = Y';
 % Y_P = Y_P';
-% % generate the train and the test by the split ratio and generate different types of noisy
-% labels
+% generate the train and the test by the split ratio and generate different types of noisy labels
 
 [n,~]=size(Y);
 number=ceil(n*modelparameter.split);
